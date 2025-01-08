@@ -11,9 +11,21 @@ const eventSchema = new mongoose.Schema(
       type: String,
       required: [true, 'An event must have a description'],
     },
-    date: {
+    startDate: {
       type: Date,
-      required: [true, 'An event must have a date'],
+      required: [true, 'An event must have a startDate'],
+    },
+    endDate: {
+      type: Date,
+      required: [true, 'An event must have am endDate'],
+    },
+    isRecurring: { type: Boolean, required: true },
+    recurrenceRule: {
+      type: String,
+      enum: ['daily', 'weekly', 'monthly'],
+      required: function () {
+        return this.isRecurring;
+      },
     },
     location: {
       type: String,
