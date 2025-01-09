@@ -85,37 +85,40 @@ The server should now be running on
 http://localhost:3000
 
 5. API Endpoints
-   POST /api/v1/users/signUp: Register a new user.
-   POST /api/v1/users/login: Log in a user and return a JWT token.
-   POST /api/v1/users/forgotPassword: Request password reset.
-   POST /api/v1/users/resetPassword/:token: Reset the user's password using a reset token.
-   POST /api/v1/users/updateMyPassword: Update the user's password.
-   POST /api/v1/users/updateMe: Update the user's profile.
-   GET /api/v1/users/me: Get details of the currently authenticated user.
-   DELETE /api/v1/users/deleteMe: Delete the currently authenticated user.
-   GET /api/v1/users: Get a list of all users (only accessible by admin and superadmin).
-   GET /api/v1/users/:id: Get details of a specific user by ID.
-   PATCH /api/v1/users/:id: Update details of a specific user by ID.
-   DELETE /api/v1/users/:id: Delete a user by ID.
-   GET /api/v1/events: Get a list of all events.
-   POST /api/v1/events: Create a new event (requires admin or superadmin access).
-   GET /api/v1/events/occurrences: Get all events with their occurrences (only accessible by admin and superadmin).
-   GET /api/v1/events/:id: Get details of a specific event by ID.
-   PATCH /api/v1/events/:id: Update a specific event by ID (requires admin or superadmin access).
-   DELETE /api/v1/events/:id: Delete a specific event by ID (requires admin or superadmin access).
-   GET /api/v1/bookings/myBookings: Get a list of all bookings made by the logged-in user.
-   GET /api/v1/bookings: Get a list of all bookings (accessible by admins & super admins).
-   POST /api/v1/bookings/:eventId: Create a booking for an event (requires event details and user info).
-   GET /api/v1/bookings/:userId: Get all bookings made by a specific user (requires admin access).
-   POST /api/v1/payment/webhook: Stripe webhook endpoint for handling incoming events (such as payment success or failure).
-   GET /api/v1/payment/checkoutSession/:bookingId: Get a Stripe checkout session for a specific booking (requires authentication).
+
+- **POST /api/v1/users/signUp**: Register a new user.
+- **POST /api/v1/users/login**: Log in a user and return a JWT token.
+- **POST /api/v1/users/forgotPassword**: Request password reset.
+- **POST /api/v1/users/resetPassword/**:token: Reset the user's password using a reset token.
+- **POST /api/v1/users/updateMyPassword**: Update the user's password.
+- **POST /api/v1/users/updateMe**: Update the user's profile.
+- **GET /api/v1/users/me**: Get details of the currently authenticated user.
+- **DELETE /api/v1/users/deleteMe**: Delete the currently authenticated user.
+- **GET /api/v1/users**: Get a list of all users (only accessible by admin and superadmin).
+- **GET /api/v1/users/:id**: Get details of a specific user by ID.
+- **PATCH /api/v1/users/:id**: Update details of a specific user by ID.
+- **DELETE /api/v1/users/:id**: Delete a user by ID.
+- **GET /api/v1/events**: Get a list of all events.
+- **POST /api/v1/events**: Create a new event (requires admin or superadmin access).
+- **GET /api/v1/events/occurrences**: Get all events with their occurrences (only accessible by admin and superadmin).
+- **GET /api/v1/events/:id**: Get details of a specific event by ID.
+- **PATCH /api/v1/events/:id**: Update a specific event by ID (requires admin or superadmin access).
+- **DELETE /api/v1/events/:id**: Delete a specific event by ID (requires admin or superadmin access).
+- **GET /api/v1/bookings/myBookings**: Get a list of all bookings made by the logged-in user.
+- **GET /api/v1/bookings**: Get a list of all bookings (accessible by admins & super admins).
+- **POST /api/v1/bookings/**:eventId: Create a booking for an event (requires event details and user info).
+- **GET /api/v1/bookings/**:userId: Get all bookings made by a specific user (requires admin access).
+- **POST /api/v1/payment/webhook**: Stripe webhook endpoint for handling incoming events (such as payment success or failure).
+- **GET /api/v1/payment/checkoutSession/**:bookingId: Get a Stripe checkout session for a specific booking (requires authentication).
 
 6. Contributing
-   Fork the repository.
-   Create a new branch (git checkout -b feature-name).
-   Make changes and commit (git commit -am 'Add feature').
-   Push to the branch (git push origin feature-name).
-   Create a new Pull Request.
+
+- **Fork the repository.**
+- **Create a new branch (git checkout -b feature-name).**
+- **Make changes and commit (git commit -am 'Add feature').**
+- **Push to the branch (git push origin feature-name).**
+- **Create a new Pull Request.**
 
 7. License
-   This project is licensed under the MIT License - see the LICENSE file for details.
+
+- **This project is licensed under the MIT License - see the LICENSE file for details.**
