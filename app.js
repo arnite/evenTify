@@ -6,6 +6,7 @@ const compression = require('compression');
 const userRoute = require('./routes/userRoute.js');
 const eventRoute = require('./routes/eventRoute.js');
 const bookingRoute = require('./routes/bookingRoute.js');
+const paymentRoute = require('./routes/paymentRoute.js');
 const AppError = require('./utils/appError');
 const globalerrorhandler = require('./controllers/errorController.js');
 const superAdmin = require('./config/superAdmin');
@@ -37,10 +38,19 @@ app.get('/', (req, res) => {
   res.send('API running..');
 });
 
+app.get('/success', (req, res) => {
+  res.send('Payment successful.');
+});
+
+app.get('/cancel', (req, res) => {
+  res.send('Payment canceled.');
+});
+
 //Main Routes
 app.use('/api/v1/users', userRoute);
 app.use('/api/v1/events', eventRoute);
 app.use('/api/v1/bookings', bookingRoute);
+app.use('/api/v1/payment', paymentRoute);
 
 //Unresolved Route
 app.all('*', (req, res, next) => {

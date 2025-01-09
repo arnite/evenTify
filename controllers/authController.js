@@ -12,7 +12,7 @@ const signToken = (id) => {
   });
 };
 
-const createSendToken = (user, status, res) => {
+const createSendToken = async (user, status, res) => {
   //create token
   const token = signToken(user._id);
 
@@ -37,8 +37,33 @@ exports.signUp = catchAsync(async (req, res, next) => {
     passwordConfirm: req.body.passwordConfirm,
   });
 
-  //Create and send token
-  createSendToken(newUser, 201, res);
+  //Send email to user and the token
+  try {
+    await sendEmail({
+      email: newUser.email,
+      subject: 'SignUp successful',
+      message: 'You have successfully signed up to evenTify.',
+    });
+  } catch (err) {
+    return next(
+      new AppError('There was an error sending the email. Try again later!')
+    );
+  }
+
+  //Create token
+  const token = signToken(newUser._id);
+
+  //Remove password from output
+  newUser.password = undefined;
+
+  //Send token and user
+  res.status(201).json({
+    status: 'success',
+    token,
+    data: {
+      user: newUser,
+    },
+  });
 });
 
 exports.login = catchAsync(async (req, res, next) => {
