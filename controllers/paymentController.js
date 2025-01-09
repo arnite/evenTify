@@ -31,7 +31,7 @@ exports.getCheckoutSession = catchAsync(async (req, res, next) => {
         price_data: {
           currency: 'usd',
           product_data: {
-            name: event.name,
+            name: event.title,
             description: event.description,
           },
           unit_amount: Math.round(purchasedBooking.totalPrice * 100), // price in cents
