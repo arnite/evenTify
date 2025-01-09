@@ -61,16 +61,6 @@ An Event Management System that allows users to book tickets for events, manage 
    SApassword = superAdmin password
    SApasswordConfirm = superAdmin passwordConfirm
    SArole = superAdmin
-   SAname = codeMind
-   SAemail = codeMind@email.codeMind
-   SApassword = codeMindPasskey
-   SApasswordConfirm = codeMindPasskey
-   SArole = superAdmin
-   SAname = codeMind
-   SAemail = codeMind@email.codeMind
-   SApassword = codeMindPasskey
-   SApasswordConfirm = codeMindPasskey
-   SArole = superAdmin
    stripeApiKEY = your stripe ApiKey
    STRIPE_WEBHOOK_SECRET = your stripe webhook secret
    ```
