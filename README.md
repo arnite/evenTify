@@ -46,15 +46,16 @@ An Event Management System that allows users to book tickets for events, manage 
 3. Create .env file in the root directory and add the following environment variables
 
    ```env
-   PORT = 3000
-   DATABASE = mongodb://localhost:27017/yourdbname
-   NODE_ENV = your environment (production / development)
-   JWT_SECRET = your_jwt_secret
-   JWT_EXPIRES_IN = your expiry day
-   EMAIL_USERNAME = mailtrap username
-   EMAIL_PASSWORD = mailtrap password
-   EMAIL_HOST = mailtrap host
-   EMAIL_PORT = mailtrap port
+   PORT=3000
+   DATABASE=mongodb://localhost:27017/yourdbname
+   JWT_SECRET=your_jwt_secret
+   NODE_ENV= your environment (production / development)
+   JWT_SECRET= your jwt secret
+   JWT_EXPIRES_IN= your expiry day
+   EMAIL_USERNAME= mailtrap username
+   EMAIL_PASSWORD= mailtrap password
+   EMAIL_HOST= mailtrap host
+   EMAIL_PORT= mailtrap port
    SAname = superAdmin name
    SAemail = superAdmin email
    SApassword = superAdmin password
