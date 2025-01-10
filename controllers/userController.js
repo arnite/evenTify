@@ -13,6 +13,25 @@ const filterObj = (obj, ...allowedFields) => {
   return newObj;
 };
 
+exports.createAdmin = catchAsync(async (req, res, next) => {
+  const { name, email, password, passwordConfirm } = req.body;
+
+  //Create admin user.
+  const admin = await User.create({
+    name,
+    email,
+    password,
+    passwordConfirm,
+    role: 'admin',
+  });
+
+  res.status(201).json({
+    status: 'success',
+    message: 'Admin successfully created.',
+    data: admin,
+  });
+});
+
 exports.getMe = catchAsync(async (req, res, next) => {
   req.params.id = req.user.id;
   next();

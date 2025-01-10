@@ -33,8 +33,8 @@ An Event Management System that allows users to book tickets for events, manage 
 1. Clone the repository:
 
    ```bash
-   git clone https://github.com/yourusername/project-name.git
-   cd project-name
+   git clone https://github.com/arnite/evenTify.git
+   cd evenTify
    ```
 
 2. Install dependecies:
@@ -46,30 +46,19 @@ An Event Management System that allows users to book tickets for events, manage 
 3. Create .env file in the root directory and add the following environment variables
 
    ```env
-   PORT=3000
-   DATABASE=mongodb://localhost:27017/yourdbname
-   JWT_SECRET=your_jwt_secret
-   NODE_ENV= your environment (production / development)
-   JWT_SECRET= your jwt secret
-   JWT_EXPIRES_IN= your expiry day
-   EMAIL_USERNAME= mailtrap username
-   EMAIL_PASSWORD= mailtrap password
-   EMAIL_HOST= mailtrap host
-   EMAIL_PORT= mailtrap port
+   PORT = 3000
+   DATABASE = mongodb://localhost:27017/yourdbname
+   NODE_ENV = your environment (production / development)
+   JWT_SECRET = your_jwt_secret
+   JWT_EXPIRES_IN = your expiry day
+   EMAIL_USERNAME = mailtrap username
+   EMAIL_PASSWORD = mailtrap password
+   EMAIL_HOST = mailtrap host
+   EMAIL_PORT = mailtrap port
    SAname = superAdmin name
    SAemail = superAdmin email
    SApassword = superAdmin password
    SApasswordConfirm = superAdmin passwordConfirm
-   SArole = superAdmin
-   SAname = codeMind
-   SAemail = codeMind@email.codeMind
-   SApassword = codeMindPasskey
-   SApasswordConfirm = codeMindPasskey
-   SArole = superAdmin
-   SAname = codeMind
-   SAemail = codeMind@email.codeMind
-   SApassword = codeMindPasskey
-   SApasswordConfirm = codeMindPasskey
    SArole = superAdmin
    stripeApiKEY = your stripe ApiKey
    STRIPE_WEBHOOK_SECRET = your stripe webhook secret
@@ -87,6 +76,7 @@ http://localhost:3000
 5. API Endpoints
 
 - **POST /api/v1/users/signUp**: Register a new user.
+- **POST /api/v1/users/createAdmin**: Create an admin (only accessible by superAdmin.)
 - **POST /api/v1/users/login**: Log in a user and return a JWT token.
 - **POST /api/v1/users/forgotPassword**: Request password reset.
 - **POST /api/v1/users/resetPassword/**:token: Reset the user's password using a reset token.
@@ -115,10 +105,10 @@ http://localhost:3000
 
 - **Fork the repository.**
 - **Create a new branch (git checkout -b feature-name).**
-- **Make changes and commit (git commit -am 'Add feature').**
+- **Make changes and commit (git commit -am 'Brief description of your changes').**
 - **Push to the branch (git push origin feature-name).**
 - **Create a new Pull Request.**
 
-7. License
+6. License
 
 - **This project is licensed under the MIT License - see the LICENSE file for details.**

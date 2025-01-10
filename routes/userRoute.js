@@ -10,6 +10,7 @@ const {
 } = require('../controllers/authController');
 const {
   updateUser,
+  createAdmin,
   getUser,
   getMe,
   getAllUsers,
@@ -28,6 +29,7 @@ router.post('/resetPassword/:token', resetPassword);
 //Routes that require login access
 router.use(protect);
 
+router.post('/createAdmin', restrictTo('superAdmin'), createAdmin);
 router.post('/updateMyPassword', updateMyPassword);
 router.post('/updateMe', updateMe);
 router.get('/me', getMe, getUser);
