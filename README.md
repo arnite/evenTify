@@ -46,9 +46,8 @@ An Event Management System that allows users to book tickets for events, manage 
 3. Create .env file in the root directory and add the following environment variables
 
    ```env
-   PORT=3000
-   DATABASE=mongodb://localhost:27017/yourdbname
-   JWT_SECRET=your_jwt_secret
+   PORT= 3000
+   DATABASE= mongodb://localhost:27017/yourdbname
    NODE_ENV= your environment (production / development)
    JWT_SECRET= your jwt secret
    JWT_EXPIRES_IN= your expiry day
@@ -56,13 +55,13 @@ An Event Management System that allows users to book tickets for events, manage 
    EMAIL_PASSWORD= mailtrap password
    EMAIL_HOST= mailtrap host
    EMAIL_PORT= mailtrap port
-   SAname = superAdmin name
-   SAemail = superAdmin email
-   SApassword = superAdmin password
-   SApasswordConfirm = superAdmin passwordConfirm
-   SArole = superAdmin
-   stripeApiKEY = your stripe ApiKey
-   STRIPE_WEBHOOK_SECRET = your stripe webhook secret
+   SAname= superAdmin name
+   SAemail= superAdmin email
+   SApassword= superAdmin password
+   SApasswordConfirm= superAdmin passwordConfirm
+   SArole= superAdmin
+   stripeApiKEY= your stripe ApiKey
+   STRIPE_WEBHOOK_SECRET= your stripe webhook secret
    ```
 
 4. Run the server
