@@ -9,6 +9,7 @@ module.exports = [
     rules: {
       'prettier/prettier': ['error', { trailingComma: 'es5' }],
       'comma-dangle': ['off'],
+      'no-unused-vars': 'error',
     },
     languageOptions: {
       parserOptions: {
