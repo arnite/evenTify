@@ -1,6 +1,6 @@
 const User = require('./../models/userModel');
 
-const createSpAdmin = async (req, res, next) => {
+const createSpAdmin = async () => {
   const SAuser = await User.findOne({ role: 'superAdmin' });
 
   if (SAuser) return;
@@ -8,11 +8,11 @@ const createSpAdmin = async (req, res, next) => {
   //Creating SuperAdmin
   try {
     await User.create({
-      name: process.env.SAname,
-      email: process.env.SAemail,
-      password: process.env.SApassword,
-      passwordConfirm: process.env.SApasswordConfirm,
-      role: process.env.SArole,
+      name: process.env.SUPER_ADMIN_NAME,
+      email: process.env.SUPER_ADMIN_EMAIL,
+      password: process.env.SUPER_ADMIN_PASSWORD,
+      passwordConfirm: process.env.SUPER_ADMIN_PASSWORD,
+      role: 'superAdmin',
     });
 
     console.log('🐱‍👤 Super Admin successfully created');

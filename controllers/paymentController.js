@@ -1,7 +1,7 @@
 const express = require('express');
 const catchAsync = require('./../utils/catchAsync');
 const AppError = require('./../utils/appError');
-const stripe = require('stripe')(process.env.stripeApiKEY);
+const stripe = require('stripe')(process.env.STRIPE_API_KEY);
 const Booking = require('../models/bookingModel');
 const Event = require('../models/eventModel');
 

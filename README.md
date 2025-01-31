@@ -46,22 +46,21 @@ An Event Management System that allows users to book tickets for events, manage 
 3. Create .env file in the root directory and add the following environment variables
 
    ```env
-   PORT= 3000
-   DATABASE= mongodb://localhost:27017/yourdbname
-   NODE_ENV= your environment (production / development)
-   JWT_SECRET= your jwt secret
-   JWT_EXPIRES_IN= your expiry day
-   EMAIL_USERNAME= mailtrap username
-   EMAIL_PASSWORD= mailtrap password
-   EMAIL_HOST= mailtrap host
-   EMAIL_PORT= mailtrap port
-   SAname= superAdmin name
-   SAemail= superAdmin email
-   SApassword= superAdmin password
-   SApasswordConfirm= superAdmin passwordConfirm
-   SArole= superAdmin
-   stripeApiKEY= your stripe ApiKey
-   STRIPE_WEBHOOK_SECRET= your stripe webhook secret
+      NODE_ENV=development (local) or production (deployment).
+   DATABASE=your_default_database_url
+   PORT=3000
+   JWT_SECRET=your_jwt_secret
+   JWT_EXPIRES_IN=your_expiry_time
+   JWT_COOKIE_EXPIRES_IN=your_expiry_time
+   EMAIL_USERNAME=mailtrap_username
+   EMAIL_PASSWORD=mailtrap_password
+   EMAIL_HOST=mailtrap_host
+   EMAIL_PORT=mailtrap_port
+   SUPER_ADMIN_NAME=super_admin_name
+   SUPER_ADMIN_EMAIL=super_admin_email
+   SUPER_ADMIN_PASSWORD=super_admin_password
+   STRIPE_API_KEY=your_stripe_api_key
+   STRIPE_WEBHOOK_SECRET=your_stripe_webhook_secret
    ```
 
 4. Run the server
@@ -75,31 +74,77 @@ http://localhost:3000
 
 5. API Endpoints
 
-- **POST /api/v1/users/signUp**: Register a new user.
-- **POST /api/v1/users/createAdmin**: Create an admin (only accessible by superAdmin.)
-- **POST /api/v1/users/login**: Log in a user and return a JWT token.
-- **POST /api/v1/users/forgotPassword**: Request password reset.
-- **POST /api/v1/users/resetPassword/**:token: Reset the user's password using a reset token.
-- **POST /api/v1/users/updateMyPassword**: Update the user's password.
-- **POST /api/v1/users/updateMe**: Update the user's profile.
-- **GET /api/v1/users/me**: Get details of the currently authenticated user.
-- **DELETE /api/v1/users/deleteMe**: Delete the currently authenticated user.
-- **GET /api/v1/users**: Get a list of all users (only accessible by admin and superadmin).
-- **GET /api/v1/users/:id**: Get details of a specific user by ID.
-- **PATCH /api/v1/users/:id**: Update details of a specific user by ID.
-- **DELETE /api/v1/users/:id**: Delete a user by ID.
-- **GET /api/v1/events**: Get a list of all events.
-- **POST /api/v1/events**: Create a new event (requires admin or superadmin access).
-- **GET /api/v1/events/occurrences**: Get all events with their occurrences (only accessible by admin and superadmin).
-- **GET /api/v1/events/:id**: Get details of a specific event by ID.
-- **PATCH /api/v1/events/:id**: Update a specific event by ID (requires admin or superadmin access).
-- **DELETE /api/v1/events/:id**: Delete a specific event by ID (requires admin or superadmin access).
-- **GET /api/v1/bookings/myBookings**: Get a list of all bookings made by the logged-in user.
-- **GET /api/v1/bookings**: Get a list of all bookings (accessible by admins & super admins).
-- **POST /api/v1/bookings/**:eventId: Create a booking for an event (requires event details and user info).
-- **GET /api/v1/bookings/**:userId: Get all bookings made by a specific user (requires admin access).
-- **POST /api/v1/payment/webhook**: Stripe webhook endpoint for handling incoming events (such as payment success or failure).
-- **GET /api/v1/payment/checkoutSession/**:bookingId: Get a Stripe checkout session for a specific booking (requires authentication).
+## 5. API Endpoints
+
+### **User Authentication & Management**
+
+- **POST `/api/v1/users/signUp`**  
+  _Register a new user._
+- **POST `/api/v1/users/createAdmin`**  
+  _Create an admin (only accessible by superAdmin)._
+- **POST `/api/v1/users/login`**  
+  _Log in a user and return a JWT token._
+- **POST `/api/v1/users/forgotPassword`**  
+  _Request a password reset._
+- **POST `/api/v1/users/resetPassword/:token`**  
+  _Reset the user's password using a reset token._
+- **POST `/api/v1/users/updateMyPassword`**  
+  _Update the user's password._
+- **POST `/api/v1/users/updateMe`**  
+  _Update the user's profile._
+- **GET `/api/v1/users/me`**  
+  _Get details of the currently authenticated user._
+- **DELETE `/api/v1/users/deleteMe`**  
+  _Delete the currently authenticated user._
+- **GET `/api/v1/users`**  
+  _Get a list of all users (only accessible by admin and superAdmin)._
+- **GET `/api/v1/users/:id`**  
+  _Get details of a specific user by ID._
+- **PATCH `/api/v1/users/:id`**  
+  _Update details of a specific user by ID._
+- **DELETE `/api/v1/users/:id`**  
+  _Delete a user by ID._
+
+---
+
+### **Event Management**
+
+- **GET `/api/v1/events`**  
+  _Get a list of all events._
+- **POST `/api/v1/events`**  
+  _Create a new event (requires admin or superAdmin access)._
+- **GET `/api/v1/events/occurrences`**  
+  _Get all events with their occurrences (only accessible by admin and superAdmin)._
+- **GET `/api/v1/events/:id`**  
+  _Get details of a specific event by ID._
+- **PATCH `/api/v1/events/:id`**  
+  _Update a specific event by ID (requires admin or superAdmin access)._
+- **DELETE `/api/v1/events/:id`**  
+  _Delete a specific event by ID (requires admin or superAdmin access)._
+
+---
+
+### **Booking Management**
+
+- **GET `/api/v1/bookings/myBookings`**  
+  _Get a list of all bookings made by the logged-in user._
+- **GET `/api/v1/bookings`**  
+  _Get a list of all bookings (accessible by admin & superAdmin)._
+- **POST `/api/v1/bookings/:eventId`**  
+  _Create a booking for an event (requires event details and user info)._
+- **GET `/api/v1/bookings/:userId`**  
+  _Get all bookings made by a specific user (requires admin access)._
+
+---
+
+### **Payment Management**
+
+- **POST `/api/v1/payment/webhook`**  
+  _Stripe webhook endpoint for handling incoming events (such as payment success or failure)._
+- **GET `/api/v1/payment/checkoutSession/:bookingId`**  
+  _Get a Stripe checkout session for a specific booking (requires authentication)._
+
+---
 
 6. Contributing
 
