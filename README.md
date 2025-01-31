@@ -154,6 +154,9 @@ http://localhost:3000
 - **Push to the branch (git push origin feature-name).**
 - **Create a new Pull Request.**
 
-6. License
+7. API Documentation
+   You can find the Postman collection for this API [here](https://documenter.getpostman.com/view/37611500/2sAYX3phqy).
+
+8. License
 
 - **This project is licensed under the MIT License - see the LICENSE file for details.**
