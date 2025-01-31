@@ -74,8 +74,6 @@ The server will run on the following URL depending on the environment:
 - **Local (development)**: `http://localhost:3000`
 - **Production (live server)**: The server URL will be defined based on your environment configuration.
 
-5. API Endpoints
-
 ## 5. API Endpoints
 
 ### **User Authentication & Management**
