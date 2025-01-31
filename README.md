@@ -69,8 +69,10 @@ An Event Management System that allows users to book tickets for events, manage 
 npm start
 ```
 
-The server should now be running on
-http://localhost:3000
+The server will run on the following URL depending on the environment:
+
+- **Local (development)**: `http://localhost:3000`
+- **Production (live server)**: The server URL will be defined based on your environment configuration.
 
 5. API Endpoints
 
