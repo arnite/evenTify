@@ -158,6 +158,15 @@ http://localhost:3000
 
 You can find the Postman collection for this API [here](https://documenter.getpostman.com/view/37611500/2sAYX3phqy).
 
+### How to Use the Postman Collection:
+
+1. Click on the link to open the Postman collection.
+2. Import the collection into your Postman app.
+3. Set up any required environment variables or authentication tokens.
+4. Run the requests to interact with the API.
+
+This collection includes all the available endpoints for the API and their respective methods, parameters, and expected responses.
+
 ## 8. License
 
 - **This project is licensed under the MIT License - see the LICENSE file for details.**
