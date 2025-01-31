@@ -46,7 +46,7 @@ An Event Management System that allows users to book tickets for events, manage 
 3. Create .env file in the root directory and add the following environment variables
 
    ```env
-      NODE_ENV=development (local) or production (deployment).
+   NODE_ENV=development (local) or production (deployment).
    DATABASE=your_default_database_url
    PORT=3000
    JWT_SECRET=your_jwt_secret
