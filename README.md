@@ -167,6 +167,11 @@ You can find the Postman collection for this API [here](https://documenter.getpo
 
 This collection includes all the available endpoints for the API and their respective methods, parameters, and expected responses.
 
-## 8. License
+## 8. Deployed App
+
+You can view the live version of the app here:  
+[evenTify - Live API](https://eventify-sq5y.onrender.com)
+
+## 9. License
 
 - **This project is licensed under the MIT License - see the LICENSE file for details.**
